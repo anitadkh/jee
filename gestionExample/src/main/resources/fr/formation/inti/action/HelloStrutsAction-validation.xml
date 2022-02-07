@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
+		"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="personne.firstName">
+		<field-validator type="requiredstring">
+			<message>Please enter a first name</message>
+		</field-validator>
+	</field>
+	<field name="personne.lastName">
+		<field-validator type="requiredstring">
+			<message>Please enter a last name</message>
+		</field-validator>
+	</field>
+	<field name="personne.title">
+		<field-validator type="requiredstring">
+			<message>Please enter a title</message>
+		</field-validator>
+	</field>
+	<field name="personne.age">
+		<field-validator type="required">
+			<message>Please enter an age</message>
+		</field-validator>
+		<field-validator type="int">
+			<param name="min">0</param>
+			<param name="max">120</param>
+			<message>Please enter a valid age </message>
+		</field-validator>
+	</field>
+	<field name="personne.email">
+		<field-validator type="requiredstring">
+			<message>Please enter an email</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>Invalid email</message>
+		</field-validator>
+	</field>
+	<field name="personne.date">
+		<field-validator type="required">
+			<message>Please enter a date</message>
+		</field-validator>
+	</field>
+	<field name="personne.gender">
+		<field-validator type="requiredstring">
+			<message>Please choose a gender</message>
+		</field-validator>
+	</field>
+
+
+</validators>
