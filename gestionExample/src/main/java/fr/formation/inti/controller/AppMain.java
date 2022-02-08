@@ -19,17 +19,20 @@ public class AppMain {
 	private static final Log log = LogFactory.getLog(AppMain.class);
 
 	public static void main(String[] args) {
-//		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
-		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfiguration.class);
+//		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		
-		IEmployeeService service = context.getBean("serviceEmployee", EmployeeService.class);
+		IEmployeeService service = context.getBean("employeeService", EmployeeService.class);
+//		IEmployeeService service = context.getBean("serviceEmployee", EmployeeService.class);
 		log.info("-------------------- Bean service " + service);
 		List<Employee> liste = service.findAll();
+		
+		liste.forEach(log::info);
 
-		for (Employee e : liste) {
-			log.info("-----------------" + e);
-		}
+//		for (Employee e : liste) {
+//			log.info("-----------------" + e);
+//		}
 		
 		context.close();
 		
